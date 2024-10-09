@@ -1,0 +1,323 @@
+@media (hover: hover) {
+  .profileSaveButton:hover {
+    color: var(--White, #FFF);
+  
+    /* Heading S */
+    font-family: "Instrument Sans";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 1.5rem */
+        border-radius: 0.5rem;
+    background: var(--purple-hover-color, #BEADFF);
+    
+    /* active-selection */
+    box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
+  }
+}
+
+.linksContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 1.5rem 1.5rem 1.5rem;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1 0 0;
+    align-self: stretch;
+    max-width: 100dvw;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .editPanel {
+    border-radius: 0.75rem;
+    display: flex;
+    padding: 2.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    flex: 1 0 0;
+    align-self: stretch;
+    background: var(--White, #fff);
+  }
+
+  .editPanelBody {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex: 1 0 0;
+    align-self: stretch;
+    overflow-y: auto;
+  }
+
+  .linkPageHeadingBar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .linkHeading {
+    margin: 0;
+    align-self: stretch;
+    color: var(--Dark-Grey, #333);
+  
+    /* Heading M */
+    font-family: "Instrument Sans";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 3rem */
+  }
+  
+  .headingP {
+    margin: 0;
+    align-self: stretch;
+    color: var(--Grey, #737373);
+  
+    /* Body M */
+    font-family: "Instrument Sans";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 1.5rem */
+  }
+
+  .profileSubArea {
+    padding: 1.2rem 2rem;
+    background-color: #fafafa;
+    border-radius: 12px;
+    width: 100%;
+    min-height: 233px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .profilePhotoText {
+    color: #737373;
+    font-size: 16px;
+    line-height: 150%;
+    width: 29%;
+  }
+
+  .uploadImageBoxContainer {
+    width: 60%;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .uploadImageContainer {
+    width: 193px;
+    height: 193px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imageUploadBox {
+    border-radius: 12px;
+  }
+
+  .imageUploadBox:hover {
+    cursor: pointer;
+  }
+
+  .uploadedImageBox {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .uploadedImageBox:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  .uploadImageBoxText {
+    color: #737373;
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  .profileTextSubArea {
+    padding: 1.2rem;
+    background-color: #fafafa;
+    border-radius: 12px;
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .profileTextContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .profileText {
+    color: #737373;
+  }
+
+  .textInputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    height: 3rem;
+    padding: 0 16px;
+    border-radius: 0.4rem;
+    border: 1px solid var(--Borders, #d9d9d9);
+    background: var(--White, #fff);
+  }
+
+  .textInputContainer:focus-within {
+    border: 1px solid #633cff;
+    box-shadow: 0px 0px 32px rgba(99, 60, 255, 0.25);
+  }
+
+  .textInput {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: inherit;
+    color: #333;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  .textInput::placeholder {
+    /* color: #d9d9d9; */
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+.profileSavePanel {
+    display: flex;
+    /* padding: 1.5rem 2.5rem; */
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    align-self: stretch;
+    background: var(--White, #fff);
+    border-radius: 0 0 0.75rem 0.75rem;
+  }
+
+.profileSaveButton {
+    color: var(--White, #FFF);
+
+/* Heading S */
+font-family: "Instrument Sans";
+font-size: 1rem;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 1.5rem */
+  display: flex;
+  padding: 0.6875rem 1.6875rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  background: var(--Purple, #633cff);
+}
+
+.profileSaveButton.disabled {
+  background: #beadff;
+  box-shadow: 0px 0px 32px rgba(99, 60, 255, 0.25);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@media only screen and (max-width: 320px) {
+  .editPanel {
+    height: 100dvh;
+  }
+
+  .addLinkBodyContentTextContainerP {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .editPanel {
+    height: 100dvh;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .editPanelBody {
+    height: fit-content;
+  }
+
+  .linkHeading {
+    font-size: 24px;
+  }
+
+  .headingP {
+    font-size: 16px;
+  }
+
+  .profileSubArea {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .profilePhotoText {
+    text-wrap: nowrap;
+  }
+
+  .uploadImageBoxContainer {
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .profileTextSubArea {
+    height: fit-content;
+    padding: 2rem 1rem;
+  }
+
+  .profileText {
+    font-size: 12px;
+  }
+
+  .profileTextContainer {
+    flex-direction: column;
+  }
+
+  .textInputContainer {
+    width: 100%;
+  }
+
+  .profileSaveButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .editPanel {
+    min-height: 100dvh;
+  }
+}
