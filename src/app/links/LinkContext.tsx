@@ -37,6 +37,7 @@ const LinkContext = createContext<LinkContextType | undefined>(undefined);
 
 export const LinkProvider = ({ children }: { children: ReactNode }) => {
   const { status, data: session } = useSession();
+  console.log(session);
   const [createLinkObjects, setCreateLinkObjects] = useState<LinkObject[]>([]);
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
