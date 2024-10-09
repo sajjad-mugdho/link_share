@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import "./profile.css";
 import DeviceLinksPreview from "@/app/components/DeviceLinksPreview";
@@ -12,8 +13,17 @@ import Spinner from "@/app/components/Spinner";
 import { CldUploadWidget } from "next-cloudinary";
 
 const Profile = () => {
-
-  const { createLinkObjects, name, email, image, editName, editEmail, editImage, saveProfile, setUserData } = useLinkContext();
+  const {
+    createLinkObjects,
+    name,
+    email,
+    image,
+    editName,
+    editEmail,
+    editImage,
+    saveProfile,
+    setUserData,
+  } = useLinkContext();
   const { status, data: session } = useSession();
   const [user, setUser] = useState<UserType | null>(null);
   const [saving, setSaving] = useState(false);
@@ -21,7 +31,6 @@ const Profile = () => {
   const [notifcation, setNotification] = useState(false);
 
   const router = useRouter();
-
 
   useEffect(() => {
     if (status === "loading") return;
@@ -34,16 +43,20 @@ const Profile = () => {
     }
   }, [status, session, setUserData, router]);
 
-
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  console.log();
+  const handleNameChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
     setNotification(true);
     editName(event.target.value);
-  }
+  };
 
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleEmailChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
     setNotification(true);
     editEmail(event.target.value);
-  }
+  };
 
   const handleSave = async () => {
     setSaving(true);
@@ -58,9 +71,10 @@ const Profile = () => {
         setSaving(false);
       }
     } catch (error) {
+      console.log(error);
       setSaving(false);
     }
-  }
+  };
 
   const handleUpload = (result: any) => {
     if (result.event === "success") {
@@ -70,16 +84,28 @@ const Profile = () => {
     }
   };
 
+  console.log(user);
+
   return (
     <div className="linksContainer">
-      <DeviceLinksPreview linkArray={createLinkObjects} name={name} email={email} image={image} />
+      <DeviceLinksPreview
+        linkArray={createLinkObjects}
+        name={name}
+        email={email}
+        image={image}
+      />
       <div className="editPanel">
         <div className="linkPageHeadingBar">
           <h1 className="linkHeading">Profile Details</h1>
-          <p className="headingP">Add your details to create a personal touch to your profile.</p>
+          <p className="headingP">
+            Add your details to create a personal touch to your profile.
+          </p>
         </div>
-        {loading === true ?
-          <div className="editPanelBody"><Spinner color="black" /></div> :
+        {loading === true ? (
+          <div className="editPanelBody">
+            <Spinner color="black" />
+          </div>
+        ) : (
           <div className="editPanelBody">
             <div className="profileSubArea">
               <p className="profilePhotoText">Profile photo</p>
@@ -103,8 +129,15 @@ const Profile = () => {
                             />
                           </div>
                           <p className="uploadImageBoxText">
-                            Image must be below 1024x1024px. <br /> Use PNG or JPG format. <br />
-                            <span className={`text-red-600 font-semibold ${notifcation ? "" : "hidden"}`} >*Remember to Save your updated profile.</span>
+                            Image must be below 1024x1024px. <br /> Use PNG or
+                            JPG format. <br />
+                            <span
+                              className={`text-red-600 font-semibold ${
+                                notifcation ? "" : "hidden"
+                              }`}
+                            >
+                              *Remember to Save your updated profile.
+                            </span>
                           </p>
                         </>
                       ) : (
@@ -116,7 +149,8 @@ const Profile = () => {
                             alt="uploadImagePlaceholder"
                           />
                           <p className="uploadImageBoxText">
-                            Image must be below 1024x1024px. <br /> Use PNG or JPG format.
+                            Image must be below 1024x1024px. <br /> Use PNG or
+                            JPG format.
                           </p>
                         </>
                       )}
@@ -129,24 +163,45 @@ const Profile = () => {
               <div className="profileTextContainer">
                 <p className="profileText">Name*</p>
                 <div className="textInputContainer">
-                  <input required type="text" className="textInput" name="name" placeholder="e.g. John Appleseed" value={name} onChange={handleNameChange} />
+                  <input
+                    required
+                    type="text"
+                    className="textInput"
+                    name="name"
+                    placeholder="e.g. John Appleseed"
+                    value={name}
+                    onChange={handleNameChange}
+                  />
                 </div>
               </div>
               <div className="profileTextContainer">
                 <p className="profileText">Email</p>
                 <div className="textInputContainer">
-                  <input type="email" className="textInput" name="email" placeholder="e.g. email@example.com" value={email} onChange={handleEmailChange} />
+                  <input
+                    type="email"
+                    className="textInput"
+                    name="email"
+                    placeholder="e.g. email@example.com"
+                    value={email}
+                    onChange={handleEmailChange}
+                  />
                 </div>
               </div>
             </div>
-          </div>}
+          </div>
+        )}
         <div className="profileSavePanel">
           <hr />
-          <button onClick={handleSave} className={`profileSaveButton ${saving ? 'disabled' : ''}`}>{saving ? "Saving" : "Save"}</button>
+          <button
+            onClick={handleSave}
+            className={`profileSaveButton ${saving ? "disabled" : ""}`}
+          >
+            {saving ? "Saving" : "Save"}
+          </button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Profile;
