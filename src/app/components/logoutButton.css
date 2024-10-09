@@ -1,0 +1,40 @@
+.logoutButtonContainer {
+    padding: 0.6875rem 1.6875rem;
+    background-color: #ff3939;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    line-height: 150%;
+    color: white;
+    min-width: 114.08px;
+}
+
+.logoutButtonContainer:active {
+    background-color: #dd2c2c;
+}
+
+.logOutIcon {
+    display: none;
+}
+
+@media (hover: hover) {
+    .logoutButtonContainer:hover {
+        background-color: #e82e2e;
+    }    
+}
+
+@media only screen and (max-width: 480px) {
+    .logoutButtonContainer {
+        min-width: none;
+        display: none;
+    }
+
+    .logOutIcon {
+        display: flex;
+    }
+    .logOutText {
+        display: none;
+    }
+}
+
+

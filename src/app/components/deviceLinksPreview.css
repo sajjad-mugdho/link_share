@@ -1,0 +1,270 @@
+.previewContainer {
+    display: flex;
+    width: 35rem;
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: stretch;
+    border-radius: 0.75rem;
+    background: var(--White, #fff);
+    max-height: 679px;
+  }
+  
+  .outerOutline {
+    display: flex;
+    width: 19.1875rem;
+    height: 39.4375rem;
+    flex-shrink: 0;
+    stroke-width: 1px;
+    stroke: var(--Grey, #737373);
+    background-image: url("../images/outerOutline.svg");
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .innerOutline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17.8125rem;
+    height: 38.1875rem;
+    flex-shrink: 0;
+    fill: var(--White, #fff);
+    stroke-width: 1px;
+    stroke: var(--Grey, #737373);
+    background-image: url("../images/innerOutline.svg");
+  }
+  
+  .outlineContent {
+    display: flex;
+    width: 14.8125rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .profileContent {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5625rem;
+    align-self: stretch;
+  }
+  
+  .profilePhotoAlternative {
+    width: 6rem;
+    height: 6rem;
+    fill: #eee;
+  }
+
+  .profilePhotoContainer {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .profilePhoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .nameAndDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nameContainer {
+    color: #000000;
+    font-size: 18px;
+    line-height: 100%;
+    font-weight: 600;
+  }
+
+  .emailContainer {
+    color: #737373;
+    font-size: 14px;
+    line-height: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+  }
+  
+  .linksListBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    align-self: stretch;
+    overflow-y: auto;
+    height: 330px;
+    padding: 0.5rem 0;
+  }
+  
+  .linkBox {
+    width: 100%;
+    display: flex;
+  }
+
+  .linkBoxAlternative {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    height: 44px;
+    align-self: stretch;
+    border-radius: 0.5rem;
+    background: #eee;
+  }
+
+  .imgTextBox {
+    display: flex;
+    gap: 1rem;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: 200px 0;
+    }
+  }
+  
+  .skeleton {
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .skeleton::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+    animation: shimmer 1.5s infinite;
+  }
+  
+  /* Skeleton Sizes */
+  .profilePhotoSkeleton {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+  }
+  
+  .nameSkeleton {
+    width: 10rem;
+    height: 1.65rem;
+    border-radius: 6.5rem;
+    margin: 0 auto;
+  }
+  
+  .emailSkeleton {
+    width: 4.5rem;
+    height: 1rem;
+    margin: 0 auto;
+    border-radius: 6.5rem;
+  }
+  
+  .linkSkeleton {
+    width: 100%;
+    height: 44px;
+    border-radius: 0.5rem;
+  }
+
+  .github {
+    background-color: #1A1A1A;
+  }
+
+  .frontendMentor {
+    background-color: #3F54A3;
+  }
+
+  .twitter {
+    background-color: #43B7E9;
+  }
+
+  .linkedIn {
+    background-color: #2D68FF;
+  }
+
+  .youTube {
+    background-color: #EE3939;
+  }
+
+  .facebook {
+    background-color: #2442AC;
+  }
+
+  .twitch {
+    background-color: #EE3FC8;
+  }
+
+  .devTo {
+    background-color: #737373;
+  }
+
+  .codeWars {
+    background-color: #8A1A50;
+  }
+
+  .codepen {
+    background-color: #302267;
+  }
+
+  .freeCodeCamp {
+    background-color: #1b1b32;
+  }
+
+  .gitLab {
+    background-color: #EB4925;
+  }
+
+  .hashNode {
+    background-color: #0330D1;
+  }
+
+  .stackOverFlow {
+    background-color: #EC7100;
+  }
+
+  .personalSite {
+    background-color: #633cff;
+  }
+
+  .whiteText {
+    color: #FFFFFF;
+    fill: white;
+  }
+
+  @media only screen and (max-width: 320px) {
+    .previewContainer {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .previewContainer {
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .previewContainer {
+      display: none;
+    }
+  }

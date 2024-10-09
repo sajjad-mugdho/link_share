@@ -1,0 +1,30 @@
+@media (hover: hover) {
+    .gitHubButton:hover {
+        cursor: pointer;
+        background-color: rgb(247, 245, 245);
+    }
+}
+
+.gitHubButtonContainer {
+    width: 100%;
+}
+
+.gitHubButton {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 11px 27px;
+    outline: none;
+    background-color: rgb(235, 235, 235);
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+}
+
+.gitHubButton:active {
+    background-color: rgb(193, 193, 193);
+}
