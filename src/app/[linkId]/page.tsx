@@ -17,8 +17,10 @@ import gitLab from "@/app/images/icon-gitlab.svg";
 import hashNode from "@/app/images/icon-hashnode.svg";
 import stackOverFlow from "@/app/images/icon-stack-overflow.svg";
 import personalSite from "@/app/images/icon-link copy.svg";
-import "@/app/preview/preview.css";
-import "@/app/components/deviceLinksPreview.css";
+// import "@/app/preview/preview.css";
+// import "@/app/components/deviceLinksPreview.css";
+import "../preview/preview.css";
+import "../components/deviceLinksPreview.css";
 import prisma from "../../../prisma/db";
 import { LinkObject } from "../links/page";
 
@@ -143,8 +145,9 @@ const SharedLinkPage = async ({ params }: LinkPageProps) => {
     (sharableData?.createLinkObjects as LinkObject[]) ?? [];
 
   return (
-    <div className="mainPreviewContainer">
-      <div className="previewBox">
+    <div className=" relative h-[100vh]">
+      <div className=" bg-purple-500 rounded-b-3xl h-96"></div>
+      <div className="previewBox absolute top-5 left-1/2 -translate-x-1/2 bg-white shadow-2xl rounded-3xl m-5">
         <div className="outlineContent">
           <div className="profileContent">
             {image === "" ? (

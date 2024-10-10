@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import Image from "next/image";
@@ -7,6 +8,7 @@ import { useEffect, useState } from "react";
 import Spinner from "@/app/components/Spinner";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 type Credentials = {
   email: string;
@@ -67,15 +69,21 @@ const CreateAccountForm = () => {
       const res = await axios.post("/api/auth/register", { email, password });
 
       if (res.status === 201) {
+        toast.success(
+          "Account created successfully! Please login to continue."
+        );
         router.push("/");
+
         setLoading(false);
       } else if (res.status === 400) {
         setError(true);
         setErrorText("This user already exists");
+
         setLoading(false);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      toast.error(error?.response?.data.error);
       setError(true);
       setLoading(false);
     }
@@ -159,6 +167,7 @@ const CreateAccountForm = () => {
           case, one number, and one special character.
         </p>
       </div>
+
       <div className="loginButtonContainer">
         <button
           type="submit"

@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import Spinner from "@/app/components/Spinner";
 import { signIn } from "next-auth/react";
 import GitHubButton from "./GitHubButton";
+import toast from "react-hot-toast";
 
 type Credentials = {
   email: string;
@@ -63,6 +64,7 @@ const LoginInputForm = () => {
         setError(true);
         setErrorText(res.error);
         setLoading(false);
+        toast.error(res.error);
       } else {
         router.push("/links");
       }
@@ -86,7 +88,7 @@ const LoginInputForm = () => {
               autoFocus
               onChange={handleCredChange}
               value={credentials.email}
-              className="credentialInputElement"
+              className="credentialInputElement text-gray-500"
               id="emailInput"
               type="email"
               pattern={`[^"'\`]*`}
@@ -109,7 +111,7 @@ const LoginInputForm = () => {
             <input
               onChange={handleCredChange}
               value={credentials.password}
-              className="credentialInputElement"
+              className="credentialInputElement text-gray-500"
               id="passwordInput"
               type="password"
               pattern={`[^"'\`]*`}

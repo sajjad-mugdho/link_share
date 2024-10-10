@@ -8,6 +8,7 @@ import DeviceLinksPreview from "@/app/components/DeviceLinksPreview";
 import CreateLink from "@/app/components/CreateLink";
 import { useLinkContext } from "./LinkContext";
 import Spinner from "../components/Spinner";
+import toast from "react-hot-toast";
 
 export type LinkObject = {
   platformOption: string;
@@ -57,6 +58,7 @@ const LinksPage = () => {
   console.log(status, session, "next-auth");
   function createNewLink(): void {
     addLink("", "https://");
+    toast.success("New link added");
     setPlatform("");
     setLink("");
   }

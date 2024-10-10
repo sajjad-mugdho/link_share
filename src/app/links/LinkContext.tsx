@@ -9,6 +9,7 @@ import React, {
 } from "react";
 import { useSession } from "next-auth/react";
 import { UserType } from "./page";
+import toast from "react-hot-toast";
 
 export type LinkObject = {
   platformOption: string;
@@ -113,6 +114,9 @@ export const LinkProvider = ({ children }: { children: ReactNode }) => {
 
       const data = await response.json();
       const { success, message } = data;
+      if (success) {
+        toast.success(message);
+      }
       return { success, message };
     } catch (error) {
       console.error("Error saving profile:", error);

@@ -9,7 +9,7 @@ import "@/app/components/deviceLinksPreview.css";
 
 import Link from "next/link";
 import Image from "next/image";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import rightArrow from "@/app/images/icon-arrow-right.svg";
 import github from "@/app/images/icon-github.svg";
 import frontendMentor from "@/app/images/icon-frontend-mentor.svg";
@@ -199,7 +199,6 @@ const PreviewContent = () => {
 
   return (
     <div className="mainPreviewContainer">
-      <Toaster />
       <div className="navBarContainer">
         {loading ? (
           <Spinner color="black" />
@@ -234,8 +233,8 @@ const PreviewContent = () => {
           )}
         </button>
       </div>
-      <div className="previewBox">
-        <div className="outlineContent">
+      <div className="previewBox px-10 m-5 shadow-2xl rounded-3xl">
+        <div className="outlineContent ">
           <div className="profileContent">
             {image === "" ? (
               <div className="profilePhotoSkeleton skeleton"></div>

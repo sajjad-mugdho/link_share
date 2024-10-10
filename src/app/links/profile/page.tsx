@@ -111,7 +111,7 @@ const Profile = () => {
               <p className="profilePhotoText">Profile photo</p>
               <div className="uploadImageBoxContainer">
                 <CldUploadWidget
-                  uploadPreset="kpxnhcqo"
+                  uploadPreset="poiki900"
                   onSuccess={handleUpload}
                 >
                   {({ open }) => (
