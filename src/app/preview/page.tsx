@@ -1,5 +1,6 @@
 "use client";
-import { LinkProvider } from "../../../../../devLinks/app/links/LinkContext";
+
+import { LinkProvider } from "../links/LinkContext";
 import PreviewContent from "./PreviewContent";
 
 const Preview = () => {

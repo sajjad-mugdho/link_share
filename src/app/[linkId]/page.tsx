@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { LinkObject } from "../../../../../devLinks/app/links/page";
+
 import rightArrow from "@/app/images/icon-arrow-right.svg";
 import github from "@/app/images/icon-github.svg";
 import frontendMentor from "@/app/images/icon-frontend-mentor.svg";
@@ -20,6 +20,7 @@ import personalSite from "@/app/images/icon-link copy.svg";
 import "@/app/preview/preview.css";
 import "@/app/components/deviceLinksPreview.css";
 import prisma from "../../../prisma/db";
+import { LinkObject } from "../links/page";
 
 interface LinkPageProps {
   params: {
@@ -39,14 +40,14 @@ export async function generateMetadata({ params }: LinkPageProps) {
 
   if (!sharableData) {
     return {
-      title: "Not Found | devlinks",
+      title: "Not Found | kahf",
       description: "The requested page was not found.",
     };
   }
 
   return {
-    title: `${sharableData.name} | devlinks`,
-    description: "Custom devlinks page",
+    title: `${sharableData.name} | kahf`,
+    description: "Custom kahf page",
   };
 }
 

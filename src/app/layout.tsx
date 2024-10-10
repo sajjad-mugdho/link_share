@@ -6,8 +6,8 @@ import "./globals.css";
 const instrumentSans = Instrument_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "devlinks",
-  description: "Link Sharing app by @_solodev",
+  title: "Kahf",
+  description: "Link Sharing app by @_sajjad",
 };
 
 export default function RootLayout({

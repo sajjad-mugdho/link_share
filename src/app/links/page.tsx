@@ -54,6 +54,7 @@ const LinksPage = () => {
     }
   }, [status, session, setUserData, router]);
 
+  console.log(status, session, "next-auth");
   function createNewLink(): void {
     addLink("", "https://");
     setPlatform("");

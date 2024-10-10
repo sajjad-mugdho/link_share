@@ -1,12 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import { useLinkContext } from "../../../../../devLinks/app/links/LinkContext";
-import Spinner from "../../../../../devLinks/app/components/Spinner";
+
 import { useRouter } from "next/navigation";
 import "./preview.css";
 import "@/app/components/deviceLinksPreview.css";
-import { UserType } from "../../../../../devLinks/app/links/page";
+
 import Link from "next/link";
 import Image from "next/image";
 import toast, { Toaster } from "react-hot-toast";
@@ -26,6 +26,9 @@ import gitLab from "@/app/images/icon-gitlab.svg";
 import hashNode from "@/app/images/icon-hashnode.svg";
 import stackOverFlow from "@/app/images/icon-stack-overflow.svg";
 import personalSite from "@/app/images/icon-link copy.svg";
+import { useLinkContext } from "../links/LinkContext";
+import Spinner from "../components/Spinner";
+import { UserType } from "../links/page";
 
 const PreviewContent = () => {
   const { createLinkObjects, name, email, image, userId, setUserData } =
@@ -50,8 +53,8 @@ const PreviewContent = () => {
         setLink(`http://localhost:3000/${userId}`);
         setOldLink(`http://localhost:3000/${userId}`);
       } else if (process.env.NODE_ENV === "production") {
-        setLink(`https://aosdevlinks.vercel.app/${userId}`);
-        setOldLink(`https://aosdevlinks.vercel.app/${userId}`);
+        setLink(`link-share-livid.vercel.app/${userId}`);
+        setOldLink(`link-share-livid.vercel.app/${userId}`);
       }
     }
   }, [userId, status, session, setUserData, router]);

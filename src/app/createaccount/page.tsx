@@ -8,8 +8,8 @@ import "../authPages.css";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Create Account | devlinks",
-  description: "create a devlinks account",
+  title: "Create Account | kafh",
+  description: "create a kafh account",
 };
 
 const createaccount = async () => {
