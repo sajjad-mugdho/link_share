@@ -84,7 +84,9 @@ const Profile = () => {
     }
   };
 
-  console.log(user);
+  const isGithubAvatar = user.image.includes(
+    "https://avatars.githubusercontent.com/"
+  );
 
   return (
     <div className="linksContainer">
@@ -97,6 +99,12 @@ const Profile = () => {
       <div className="editPanel">
         <div className="linkPageHeadingBar">
           <h1 className="linkHeading">Profile Details</h1>
+          {isGithubAvatar && (
+            <h3 className="text-rose-500 animate-bounce font-bold m-2">
+              You login from github you have to click save button to save data
+              in server{" "}
+            </h3>
+          )}
           <p className="headingP">
             Add your details to create a personal touch to your profile.
           </p>

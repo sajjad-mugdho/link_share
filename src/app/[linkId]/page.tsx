@@ -40,6 +40,8 @@ export async function generateMetadata({ params }: LinkPageProps) {
     },
   });
 
+  console.log(sharableData, "sharableData1234");
+
   if (!sharableData) {
     return {
       title: "Not Found | kahf",

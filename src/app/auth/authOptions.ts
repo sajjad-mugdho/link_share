@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { NextAuthOptions } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -49,6 +50,26 @@ const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, account }) {
+      // When the user signs in, save the provider in the token
+      if (account) {
+        token.provider = account.provider;
+        console.log(account, token);
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      // Pass the provider information to the client
+      // @ts-ignore
+      session.provider = token.provider;
+      // console.log(session, token);
+      // Include user ID in session
+      // @ts-ignore
+      session.user.id = token.sub;
+      return session;
+    },
+  },
   session: {
     strategy: "jwt", // Using JWT for sessions
   },
