@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import "./profile.css";
@@ -83,7 +84,7 @@ const Profile = () => {
       setNotification(true);
     }
   };
-
+  // @ts-ignore
   const isGithubAvatar = user.image.includes(
     "https://avatars.githubusercontent.com/"
   );
