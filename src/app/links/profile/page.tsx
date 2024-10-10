@@ -85,9 +85,9 @@ const Profile = () => {
     }
   };
   // @ts-ignore
-  const isGithubAvatar = user?.image.includes(
-    "https://avatars.githubusercontent.com/"
-  );
+  const isGithubAvatar =
+    user?.image &&
+    user.image.includes("https://avatars.githubusercontent.com/");
 
   return (
     <div className="linksContainer">
